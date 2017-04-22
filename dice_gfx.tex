@@ -1,0 +1,111 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+
+\documentclass[11pt,a4paper,arial]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                               % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+\usepackage{fontspec}
+\setmainfont{Arial}
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% personal data
+%\name{Daan}{Wendelen}
+%\title{Application for Frostbite: Rendering Engineer}                               % optional, remove / comment the line if not wanted
+\address{Ambachtstraat 17A}{3530 Helchteren}{Belgium}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[mobile]{+32~471~46~08~68}                   % optional, remove / comment the line if not wanted
+%\phone[fixed]{+2~(345)~678~901}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+\email{daanwendelen@gmail.com}                               % optional, remove / comment the line if not wanted
+%\homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%-----       letter       ---------------------------------------------------------
+% recipient data
+\recipient{DICE}{S\"odermalmsall\'en 36\\118 28 Stockholm}
+\date{2016-10-18}
+%\opening{Dear,}
+%\closing{With kind regards,}
+%\enclosure[Attached]{curriculum vit\ae{}}          % use an optional argument to use a string other than "Enclosure", or redefine \enclname
+
+\makelettertitle
+
+~\\
+~
+
+\textbf {Application for Frostbite: Rendering Engineer}
+
+~\\
+~
+
+%Let's start with an anecdote, everyone likes anecdotes.
+It was 2004 when a TV show featured this amazing game. You could fly in planes and shoot them down with your machine gun. The game was
+called ``Battlefield Vietnam''. I was impressed. The next week I bought the game, but our PC could not run it.
+When the family got a new computer, I could finally experience the game. I have been a Battlefield enthusiast ever since.
+%This is why I want to work for DICE.
+
+~\\
+~
+
+In modern AAA titles, stunning graphics are a billboard. But the competition is fierce and rendering those pretty pictures
+is very challenging. It requires great artists, clever engineers and support from the rest of the game engine to get the job done. It's like a big puzzle
+that needs to be cracked. But we can only pull this off if we all put our backs behind it. I would love to pull that weight in a diverse team so
+I can learn, teach and ultimately fulfill my full potential.
+
+~\\
+~
+
+As a professional Java developer, I gained experience in software engineering, teamwork, communication and customer interactions. For my master thesis, I studied
+the architecture of the AMD Radeon HD 6970 and wrote OpenCL kernels that were optimised for that card. To learn about the graphics pipeline, I attended a course
+on computer graphics and I built a portable game in modern OpenGL. I am currently porting its rendering engine to Vulkan to gain a deeper insight. My C++ experience is limited,
+but I will pick up on this very fast. I already started by reading the book ''Effective C++'' and applying its principles.
+
+~\\
+~
+
+I would like to elaborate on my motivation and competences in a personal interview,
+
+
+~
+
+\textbf {Daan Wendelen}
+
+\makeletterclosing
+
+\end{document}
+
+
+%% end of file `template.tex'.
