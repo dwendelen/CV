@@ -1,0 +1,7 @@
+*.log
+*.pdf
+*.backup
+*.run.xml
+*.aux
+*.bcf
+*.out
