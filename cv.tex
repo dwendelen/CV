@@ -21,6 +21,29 @@
 
 \documentclass[a4paper]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
 
+\usepackage{xifthen}
+\usepackage{multicol}
+
+
+\renewcommand{\subsection}[1]{
+  \par\vspace{\parskip}
+  {%
+    \Large\headingfont\color{headercolor} #1%
+  }
+  \par\vspace{\parskip}
+}
+
+\newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
+\newcommand{\case}[2]{#1 #2} % Dummy, so \renewcommand has something to overwrite...
+\newenvironment{switch}[1]{\renewcommand{\case}{\ifequals{#1}}}{}
+\newcommand{\skill}[2]{
+  \begin{switch}{#2}
+    \case{1}{#1~~$\ast$\\}
+    \case{2}{#1~~$\ast\ast$\\}
+    \case{3}{#1~~$\ast\ast$$\ast$\\}
+    \case{4}{#1~~$\ast\ast$$\ast\ast$\\}
+  \end{switch}
+}
 
 \begin{document}
 
@@ -174,4 +197,114 @@ I was also a member of VTK’s board.\\
 
 \textbf{Professional:} Computer graphics, distributed systems, design patterns\\
 \textbf{Personal:} Videogames, logical puzzles, watching series, listening to music
+
+\newpage
+\addtolength{\oddsidemargin}{-3cm}
+\addtolength{\evensidemargin}{-3cm}
+\section{Software engineering skills}
+\begin{multicols}{3}
+
+\subsection{Front-end}
+\skill{Javascript}{3}
+\skill{AngularJS}{2}
+\skill{jQuery}{2}
+\skill{JSF with Primefaces}{2}
+\skill{HTML}{2}
+\skill{CSS}{2}
+\skill{Jasmine}{2}
+\skill{Geb}{2}
+\skill{Sahi}{2}
+
+
+\subsection{Deployment}
+\skill{Jenkins}{3}
+\skill{Rundeck}{2}
+\skill{Netscaler}{2}
+\skill{Artifactory}{2}
+\skill{.deb packaging}{2}
+\skill{.rpm packaging}{2}
+
+\subsection{Processes}
+\skill{Scrum}{2}
+\skill{XP}{2}
+\skill{Continues Integration}{2}
+\skill{Continues Delivery}{2}
+\skill{Test Driven Development}{2}
+
+\subsection{Software design}
+\skill{CQRS}{3}
+\skill{Event Sourcing}{3}
+\skill{Reative Programming}{3}
+\skill{Domain Driven Design}{2}
+
+\subsection{Languages}
+\skill{Java (7,8)}{3}
+\skill{Scala}{2}
+
+\subsection{Frameworks}
+\skill{Spring MVC}{3}
+\skill{Spring Context}{3}
+\skill{Spring Boot}{2}
+\skill{String Data}{2}
+\skill{Axon}{3}
+\skill{Hibernate}{2}
+
+\subsection{Infrastructure}
+\skill{Cassandra}{2}
+\skill{Couchbase}{2}
+\skill{Kafka}{2}
+\skill{Zookeeper}{2}
+\skill{Hazelcast}{2}
+\skill{ActiveMQ}{2}
+
+\subsection{Web technology}
+\skill{REST}{3}
+\skill{Websocket}{2}
+\skill{JWT}{2}
+\skill{Servlet}{2}
+
+\subsection{Testing}
+\skill{JUnit}{3}
+\skill{Mockito}{2}
+\skill{JMockit}{2}
+\skill{AssertJ}{2}
+\skill{JBehave}{2}
+
+
+
+\subsection{Development tools}
+
+IntelliJ
+Eclipse
+Visual Studio
+
+Git
+SVN
+
+Maven
+Ant
+Gradle
+
+\subsection{C++}
+C++ 11
+OpenGL
+Vulkan
+Oculus SDK
+OpenCL
+CMake
+SDL
+
+\subsection{Other languages}
+C\#
+PHP
+VB.NET
+Groovy
+Python
+Prolog
+Haskell
+Matlab
+
+\end{multicols}
+\addtolength{\oddsidemargin}{0cm}
+\addtolength{\evensidemargin}{0cm}
 \end{document}
