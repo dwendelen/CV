@@ -32,18 +32,32 @@
   }
   \par\vspace{\parskip}
 }
+\renewcommand{\subsubsection}[1]{
+  \par\vspace{\parskip}
+  {%
+    \large\headingfont\color{headercolor} #1%
+  }
+  \par\vspace{\parskip}
+}
 
 \newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
 \newcommand{\case}[2]{#1 #2} % Dummy, so \renewcommand has something to overwrite...
 \newenvironment{switch}[1]{\renewcommand{\case}{\ifequals{#1}}}{}
 \newcommand{\skill}[2]{
-  \begin{switch}{#2}
-    \case{1}{#1~~$\ast$\\}
-    \case{2}{#1~~$\ast\ast$\\}
-    \case{3}{#1~~$\ast\ast$$\ast$\\}
-    \case{4}{#1~~$\ast\ast$$\ast\ast$\\}
+  \makebox[2.7cm][l]{#1}%
+  \begin{switch}{#2}%
+    \case{1}{~~$\ast$\\}%
+    \case{2}{~~$\ast\ast$\\}%
+    \case{3}{~~$\ast\ast$$\ast$\\}%
+    \case{4}{~~$\ast\ast$$\ast\ast$\\}%
   \end{switch}
 }
+
+\newenvironment{skillgroup}[1]
+{\subsubsection{#1}
+}{}
+
+
 
 \begin{document}
 
@@ -75,20 +89,20 @@ Nickname: Xtrit
 \textbf{English}\\C1
 ~
 \textbf{Swedish}\\B1
-~
-\textbf{French}\\A1
-\section{ICT-skills}
+\section{Software\\Engineering}
 \begin{tabular}{r l}
-C++11 & ~~$\ast\ast$
-OpenGL & ~~$\ast\ast$
-Vulkan & ~~$\ast$
-OpenCL & ~~$\ast\ast$
+Java (7, 8) & ~~$\ast\ast$$\ast$
+Scala & ~~$\ast\ast$
+Cassandra & ~~$\ast\ast$
+Kafka & ~~$\ast\ast$
+Zookeeper & ~~$\ast\ast$
 Git & ~~$\ast\ast$$\ast$
-SVN & ~~$\ast\ast$
-CMake & ~~$\ast$
-Code::Blocks & ~~$\ast$
-MS Visual C++ & ~~$\ast$
-{\scriptsize (and many more)}&
+Jenkins & ~~$\ast\ast$
+IntelliJ & ~~$\ast\ast$
+Gradle & ~~$\ast\ast$
+Scrum & ~~$\ast\ast$
+
+{\scriptsize (more on the next page)}&
 \end{tabular}
 ~
 {\tiny \begin{tabular}{r p{2.5cm}}
@@ -126,7 +140,7 @@ This is possible because we fully automated the build, test and deployment proce
 {2012--2015~}
 {Master of Engineering: Computer Science}
 {KU Leuven}
-{Master Thesis: Parallelisation of calculations with matrices using OpenCL\\
+{Specialisation: Distributed Systems\\
 ~}
 
 
@@ -195,116 +209,152 @@ I was also a member of VTK’s board.\\
 
 \section{Interests}
 
-\textbf{Professional:} Computer graphics, distributed systems, design patterns\\
+\textbf{Professional:} Computer graphics, distributed systems, neural networks\\
 \textbf{Personal:} Videogames, logical puzzles, watching series, listening to music
 
 \newpage
-\addtolength{\oddsidemargin}{-3cm}
-\addtolength{\evensidemargin}{-3cm}
+\addtolength{\oddsidemargin}{-1.7cm}
+\addtolength{\evensidemargin}{-1.7cm}
+
 \section{Software engineering skills}
+
+\subsection{Back-end}
 \begin{multicols}{3}
-
-\subsection{Front-end}
-\skill{Javascript}{3}
-\skill{AngularJS}{2}
-\skill{jQuery}{2}
-\skill{JSF with Primefaces}{2}
-\skill{HTML}{2}
-\skill{CSS}{2}
-\skill{Jasmine}{2}
-\skill{Geb}{2}
-\skill{Sahi}{2}
-
-
-\subsection{Deployment}
-\skill{Jenkins}{3}
-\skill{Rundeck}{2}
-\skill{Netscaler}{2}
-\skill{Artifactory}{2}
-\skill{.deb packaging}{2}
-\skill{.rpm packaging}{2}
-
-\subsection{Processes}
-\skill{Scrum}{2}
-\skill{XP}{2}
-\skill{Continues Integration}{2}
-\skill{Continues Delivery}{2}
-\skill{Test Driven Development}{2}
-
-\subsection{Software design}
-\skill{CQRS}{3}
-\skill{Event Sourcing}{3}
-\skill{Reative Programming}{3}
-\skill{Domain Driven Design}{2}
-
-\subsection{Languages}
-\skill{Java (7,8)}{3}
-\skill{Scala}{2}
-
-\subsection{Frameworks}
+\begin{skillgroup}{Frameworks}
 \skill{Spring MVC}{3}
 \skill{Spring Context}{3}
 \skill{Spring Boot}{2}
 \skill{String Data}{2}
 \skill{Axon}{3}
 \skill{Hibernate}{2}
+\end{skillgroup}
 
-\subsection{Infrastructure}
+\begin{skillgroup}{Languages}
+\skill{Java (7, 8)}{3}
+\skill{Scala}{2}
+~\\
+~\\
+\end{skillgroup}
+
+\begin{skillgroup}{Infrastructure}
 \skill{Cassandra}{2}
 \skill{Couchbase}{2}
 \skill{Kafka}{2}
 \skill{Zookeeper}{2}
 \skill{Hazelcast}{2}
 \skill{ActiveMQ}{2}
+\end{skillgroup}
 
-\subsection{Web technology}
-\skill{REST}{3}
-\skill{Websocket}{2}
-\skill{JWT}{2}
-\skill{Servlet}{2}
+\begin{skillgroup}{Software design}
+\skill{CQRS}{3}
+\skill{Event Sourcing}{3}
+\skill{Reactive Prog.}{3}
+\skill{DDD}{2}
+\end{skillgroup}
 
-\subsection{Testing}
+\begin{skillgroup}{Testing}
 \skill{JUnit}{3}
 \skill{Mockito}{2}
 \skill{JMockit}{2}
 \skill{AssertJ}{2}
 \skill{JBehave}{2}
+~\\
+\end{skillgroup}
+
+\begin{skillgroup}{Web technology}
+\skill{REST}{3}
+\skill{Websocket}{2}
+\skill{JWT}{2}
+\skill{Servlet}{2}
+\end{skillgroup}
+\end{multicols}
 
 
+\subsection{Supporting}
+\begin{multicols}{3}
+\begin{skillgroup}{Dev. tools}
+\skill{IntelliJ}{2}
+\skill{Eclipse}{2}
+\skill{Visual Studio}{1}
+\skill{Git}{3}
+\skill{SVN}{2}
+\skill{Gradle}{2}
+\skill{Maven}{2}
+\end{skillgroup}
 
-\subsection{Development tools}
+\begin{skillgroup}{Deployment}
+\skill{Jenkins}{3}
+\skill{Rundeck}{2}
+\skill{Docker}{2}
+\skill{Netscaler}{2}
+\skill{Artifactory}{2}
+\skill{.deb packaging}{2}
+\skill{.rpm packaging}{2}
+\end{skillgroup}
 
-IntelliJ
-Eclipse
-Visual Studio
+\begin{skillgroup}{Processes}
+\skill{Scrum}{2}
+\skill{XP}{2}
+\skill{Cont. Integration}{2}
+\skill{Cont. Delivery}{2}
+\skill{Test Driven Dev.}{2}
+~\\
+~\\
+\end{skillgroup}
 
-Git
-SVN
-
-Maven
-Ant
-Gradle
-
-\subsection{C++}
-C++ 11
-OpenGL
-Vulkan
-Oculus SDK
-OpenCL
-CMake
-SDL
-
-\subsection{Other languages}
-C\#
-PHP
-VB.NET
-Groovy
-Python
-Prolog
-Haskell
-Matlab
 
 \end{multicols}
+
+
+
+
+\subsection{Other}
+\begin{multicols}{3}
+\begin{skillgroup}{Front-end}
+\skill{Javascript}{3}
+\skill{AngularJS}{2}
+\skill{jQuery}{2}
+\skill{JSF, Primefaces}{2}
+\skill{HTML}{2}
+\skill{CSS}{2}
+\skill{Jasmine}{2}
+\skill{Geb}{2}
+\skill{Sahi}{2}
+\end{skillgroup}
+
+\begin{skillgroup}{Languages}
+\skill{C++ 11}{2}
+\skill{C\#}{2}
+\skill{PHP}{2}
+\skill{VB.NET}{2}
+\skill{Groovy}{2}
+\skill{Python}{2}
+\skill{Prolog}{2}
+\skill{Haskell}{2}
+\skill{Matlab}{2}
+\end{skillgroup}
+
+\begin{skillgroup}{Graphics}
+\skill{OpenGL}{2}
+\skill{Vulkan}{1}
+\skill{OpenCL}{2}
+\skill{Oculus SDK}{2}
+\skill{CMake}{2}
+~\\
+~\\
+~\\
+~\\
+\end{skillgroup}
+
+\end{multicols}
+
+\begin{tabular}{r l}
+$\ast$ & ~~ Limited, need to work under supervission\\
+$\ast\ast$ & ~~ Autonomy on simple tasks, need couching for complex tasks\\
+$\ast\ast$$\ast$ & ~~ Autonomy on complex tasks\\
+$\ast\ast$$\ast\ast$ & ~~ Can lead, coach, supervise complex tasks
+\end{tabular}
+
 \addtolength{\oddsidemargin}{0cm}
 \addtolength{\evensidemargin}{0cm}
 \end{document}
