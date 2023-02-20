@@ -1,0 +1,356 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Friggeri Resume/CV
+% XeLaTeX Template
+% Version 1.0 (5/5/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Adrien Friggeri (adrien@friggeri.net)
+% https://github.com/afriggeri/CV
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Important notes:
+% This template needs to be compiled with XeLaTeX and the bibliography, if used,
+% needs to be compiled with biber rather than bibtex.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper]{friggeri-cv} % Add 'print' as an option into the square bracket to remove colors from this template for printing
+
+\usepackage{xifthen}
+\usepackage{multicol}
+
+
+\renewcommand{\subsection}[1]{
+  \par\vspace{\parskip}
+  {%
+    \Large\headingfont\color{headercolor} #1%
+  }
+  \par\vspace{\parskip}
+}
+\renewcommand{\subsubsection}[1]{
+  \par\vspace{\parskip}
+  {%
+    \large\headingfont\color{headercolor} #1%
+  }
+  \par\vspace{\parskip}
+}
+
+\newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
+\newcommand{\case}[2]{#1 #2} % Dummy, so \renewcommand has something to overwrite...
+\newenvironment{switch}[1]{\renewcommand{\case}{\ifequals{#1}}}{}
+\newcommand{\skill}[2]{
+  \makebox[2.7cm][l]{#1}%
+  \begin{switch}{#2}%
+    \case{1}{~~$\ast$\\}%
+    \case{2}{~~$\ast\ast$\\}%
+    \case{3}{~~$\ast\ast$$\ast$\\}%
+    \case{4}{~~$\ast\ast$$\ast\ast$\\}%
+  \end{switch}
+}
+
+\newenvironment{skillgroup}[1]
+{\subsubsection{#1}
+}{}
+
+
+
+\begin{document}
+
+\header{Daan Wendelen}{} % Your name and current job title/field
+
+%----------------------------------------------------------------------------------------
+%	SIDEBAR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{aside} % In the aside, each new line forces a line break
+\section{Personal}
+Nationality: Belgian
+Birth: 1990-10-16
+Driving license: B
+~
+Piraeusstraat
+2000 Antwerp
+Belgium
+~
++32 471 46 08 68
+\href{mailto:daanwendelen@gmail.com}{daanwendelen\\@gmail.com}
+%\href{http://www.smith.com}{http://www.smith.com}
+%\href{http://facebook.com/johnsmith}{fb://jsmith}
+~
+\section{Languages}
+\textbf{Dutch}\\Native
+~
+\textbf{English}\\C1
+~
+\textbf{Swedish}\\B1
+\section{Software\\Engineering}
+\begin{tabular}{r l}
+Java (7, 8, 11) & ~~$\ast\ast$$\ast\ast$
+Kotlin & ~~$\ast\ast$$\ast$
+Spring Boot & ~~$\ast\ast$$\ast$
+Kafka & ~~$\ast\ast$$\ast$
+Git & ~~$\ast\ast$$\ast$
+IntelliJ & ~~$\ast\ast$$\ast$
+Gradle & ~~$\ast\ast$$\ast$
+Jenkins & ~~$\ast\ast$
+Kubernetes & ~~$\ast\ast$
+
+{\scriptsize (more on the next page)}&
+\end{tabular}
+~
+{\tiny \begin{tabular}{r p{2.5cm}}
+$\ast$ ~~& Limited, need to work under
+& ~~supervision
+$\ast\ast$ ~~& Autonomy on simple tasks, need
+& ~~coaching for complex tasks
+$\ast\ast$$\ast$ ~~& Autonomy on complex tasks
+$\ast\ast$$\ast\ast$ ~~& Can lead, coach, supervise
+& ~~complex tasks
+\end{tabular}
+~}
+\end{aside}
+
+\section{Working experience}
+\begin{entrylist}
+\entry
+{2021--now~~~} % Midden november 2021
+{v-consult (Architect)}
+{Cegeka}
+{I am currently working as one of the architects in an agile scrum team. We work on the v-consult project for our customer Viollier.
+v-consult is an online platform where the doctors can order medical tests for their patients and consult the results.
+We are also maintaining a mobile app for doctors and another one for the patients.
+As an architect, I am responsible for everything that is technical in nature and to help the other developers grow.}
+
+
+\entry
+{2016--2021~} % Januari 2016
+{v-consult (Technical Designer)}
+{Cegeka}
+{As a technical designer, I was given more responsibility. I had to design bigger pieces of software and implement them together with my colleagues.}
+
+
+\entry
+{2014--2016~} % Week voor oktober
+{v-consult (Software Engineer)}
+{Cegeka}
+{As a junior, I was responsible to implement the features requested by Viollier. It gave me an opportunity to learn and grow.}
+
+
+\end{entrylist}
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Education}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2012--2015~}
+{Master of Engineering: Computer Science}
+{KU Leuven}
+{Specialisation: Distributed Systems\\
+~}
+
+
+%------------------------------------------------
+\entry
+{2009--2012~}
+{Bachelor of Science in Informatics}
+{KU Leuven}
+{~}
+
+\entry
+{2008--2009~}
+{Bachelor of Engineering}
+{KU Leuven}
+{Discontinued due to reorientation}
+%------------------------------------------------
+\end{entrylist}
+
+
+%----------------------------------------------------------------------------------------
+%	AWARDS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Extracurricular activities}
+
+\begin{entrylist}
+%------------------------------------------------
+\entry
+{2014--2014~}
+{Software developer}
+{Vlaamse Technische Kring Leuven}
+{VTK is the student union of the Engineering Faculty. My main task was to develop new software. I also provided technical support concerning components I developed or components of which I have an extensive knowledge.
+~}
+
+\entry
+{2012--2014~}
+{Fakbar responsible and treasurer}
+{Vlaamse Technische Kring Leuven}
+{A fakbar is a place where students can come together in the evening. For one evening every week, I was responsible for everything that happened in the fakbar. It was also my job to guide and coordinate the volunteers that worked in the fakbar.\\
+As a secondary task, I was responsible to ensure that the fakbar remained financially healthy.
+~}
+
+
+%------------------------------------------------
+\end{entrylist}
+
+
+%----------------------------------------------------------------------------------------
+%	INTERESTS SECTION
+%----------------------------------------------------------------------------------------
+
+\section{Interests}
+
+Distributed systems, Logical puzzles, jigsaw puzzels, watching series, listening to music, personal development
+
+\newpage
+\addtolength{\oddsidemargin}{-1.7cm}
+\addtolength{\evensidemargin}{-1.7cm}
+
+\section{Software engineering skills}
+\subsection{Back-end}
+\begin{multicols}{3}
+\begin{skillgroup}{Frameworks}
+\skill{Spring MVC}{3}
+\skill{Spring Context}{3}
+\skill{Spring Boot}{3}
+\skill{String Data}{2}
+\skill{Axon}{3}
+\skill{Hibernate}{2}
+\end{skillgroup}
+
+\begin{skillgroup}{Languages}
+\skill{Java (7, 8, 11)}{4}
+\skill{Kotlin}{3}
+\skill{Scala}{2}
+~\\
+\end{skillgroup}
+
+\begin{skillgroup}{Infrastructure}
+\skill{Kafka}{3}
+\skill{Zookeeper}{2}
+\skill{Couchbase}{2}
+\skill{Hazelcast}{2}
+\skill{Cassandra}{2}
+\skill{ActiveMQ}{1}
+\end{skillgroup}
+
+\begin{skillgroup}{Software design}
+\skill{CQRS}{3}
+\skill{Event Sourcing}{3}
+\skill{Reactive Prog.}{3}
+\skill{DDD}{2}
+\end{skillgroup}
+
+\begin{skillgroup}{Testing}
+\skill{JUnit}{3}
+\skill{Mockito}{2}
+\skill{JMockit}{1}
+\skill{AssertJ}{2}
+\skill{JBehave}{2}
+~\\
+\end{skillgroup}
+
+\begin{skillgroup}{Web technology}
+\skill{REST}{3}
+\skill{Websocket}{2}
+\skill{JWT}{2}
+\skill{Servlet}{2}
+\end{skillgroup}
+\end{multicols}
+
+
+\subsection{General}
+\begin{multicols}{3}
+\begin{skillgroup}{Deployment}
+\skill{Jenkins}{3}
+\skill{Kubernetes}{2}
+\skill{ArgoCD}{2}
+\skill{Rundeck}{2}
+\skill{Docker}{2}
+\skill{Netscaler}{2}
+\skill{Artifactory}{2}
+\end{skillgroup}
+
+
+\begin{skillgroup}{Dev. tools}
+\skill{IntelliJ}{3}
+\skill{Gradle}{3}
+\skill{Eclipse}{2}
+\skill{Visual Studio}{1}
+\skill{Git}{3}
+\skill{SVN}{1}
+\skill{Maven}{2}
+\end{skillgroup}
+
+
+\begin{skillgroup}{Processes}
+\skill{Test Driven Dev.}{3}
+\skill{Cont. Integration}{3}
+\skill{Cont. Delivery}{3}
+\skill{Scrum}{2}
+\skill{XP}{2}
+~\\
+~\\
+\end{skillgroup}
+
+\end{multicols}
+
+
+\subsection{Other}
+\begin{multicols}{3}
+\begin{skillgroup}{Front-end}
+\skill{RxJS}{3}
+\skill{Javascript}{2}
+\skill{Typescript}{2}
+\skill{Angular (JS)}{2}
+\skill{JSF, Primefaces}{2}
+\skill{HTML}{2}
+\skill{CSS}{2}
+\skill{Playwright}{2}
+\skill{Geb}{2}
+\end{skillgroup}
+
+\begin{skillgroup}{Languages}
+\skill{C++ 11}{2}
+\skill{C\#}{2}
+\skill{PHP}{2}
+\skill{VB.NET}{2}
+\skill{Groovy}{2}
+\skill{Python}{2}
+\skill{Go}{2}
+\skill{Haskell}{2}
+\skill{Matlab}{2}
+\end{skillgroup}
+
+\begin{skillgroup}{Graphics}
+\skill{OpenGL}{2}
+\skill{Vulkan}{1}
+\skill{OpenCL}{2}
+\skill{Oculus SDK}{2}
+~\\
+~\\
+~\\
+~\\
+~\\
+\end{skillgroup}
+
+\end{multicols}
+
+\begin{tabular}{r l}
+$\ast$ & ~~ Limited, need to work under supervision\\
+$\ast\ast$ & ~~ Autonomy on simple tasks, need coaching for complex tasks\\
+$\ast\ast$$\ast$ & ~~ Autonomy on complex tasks\\
+$\ast\ast$$\ast\ast$ & ~~ Can lead, coach, supervise complex tasks
+\end{tabular}
+
+\addtolength{\oddsidemargin}{0cm}
+\addtolength{\evensidemargin}{0cm}
+\end{document}
